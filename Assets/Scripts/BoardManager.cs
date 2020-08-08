@@ -26,14 +26,20 @@ public class BoardManager : MonoBehaviour
     public GameObject[] FoodTiles;
     public GameObject[] EnemyTiles;
     public GameObject[] OuterWallTiles;
+    public GameObject Ghost;
 
     private int Colums = 16;
     private int Rows = 16;
     private Count WallCount = new Count(15, 30); // Change magic numbers
-    private Count FoodCount = new Count(6, 12);
+    private Count FoodCount = new Count(10, 15);
 
     private Transform _boardHolder;
     private List<Vector3> _gridPositions = new List<Vector3>();
+
+    private void Awake()
+    {
+        Ghost = GameObject.FindGameObjectWithTag("Ghost");
+    }
 
     void InitialiseList()
     {
@@ -94,6 +100,8 @@ public class BoardManager : MonoBehaviour
         LayoutObjectAtRandom(WallTiles, WallCount.Mininum, WallCount.Maximum);
         LayoutObjectAtRandom(FoodTiles, FoodCount.Mininum, FoodCount.Maximum);
         int enemyCount = (int)Mathf.Log(level, 2f);
+      
+        
 
         IEnumerator DelayEnemySpawn()
         {
@@ -105,7 +113,12 @@ public class BoardManager : MonoBehaviour
         }
 
         StartCoroutine(DelayEnemySpawn());
+
     }
+
+ 
+    
+
 
 
 

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public BoardManager BoardScript;
     public int PlayerFoodPoints = 100;
+    //public GameObject Ghost;
     [HideInInspector] public bool PlayersTurn = true;
 
     private Text _levelText;
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
         _enemies = new List<Enemy>();
+        //Ghost = GameObject.FindGameObjectWithTag("Ghost");
         BoardScript = GetComponent<BoardManager>();
         InitGame();
     }
@@ -117,4 +119,5 @@ public class GameManager : MonoBehaviour
         _enemiesMoving = false;
 
     }
+
 }

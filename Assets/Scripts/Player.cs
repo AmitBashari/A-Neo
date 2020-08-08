@@ -111,6 +111,10 @@ public class Player : MovingObject
             SoundManager.Instance.RanomizeSfx(DrinkSound1, DrinkSound2);
             other.gameObject.SetActive(false);
         }
+        else if (other.tag == "Ghost")
+        {
+            LoseFood(50);
+        }
     }
 
     protected override void OnCantMove<T>(T component)
@@ -143,6 +147,7 @@ public class Player : MovingObject
         }
 
     }
+
 
     protected override void EnemyHitWall<T>(T component)
     {
