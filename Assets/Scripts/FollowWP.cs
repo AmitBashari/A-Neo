@@ -7,7 +7,7 @@ public class FollowWP : MonoBehaviour
     public Transform[] Waypoints;
     public int WaypointsNumber = 0;
 
-    private float Movespeed = 3f;
+    private float Movespeed = 2f;
 
     void Start()
     {
