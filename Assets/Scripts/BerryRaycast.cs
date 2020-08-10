@@ -35,7 +35,7 @@ public class BerryRaycast : MonoBehaviour
 
 
 
-        if (hitLeft.collider == PlayerBoxCollider2D)
+        if (hitLeft.collider == PlayerBoxCollider2D || hitRight.collider == PlayerBoxCollider2D || hitUp.collider == PlayerBoxCollider2D || hitDown.collider == PlayerBoxCollider2D)
         {
             Debug.Log("Berry hit Player");
 
