@@ -5,11 +5,9 @@ using UnityEngine;
 public class FollowWP : MonoBehaviour
 {
     public Transform[] Waypoints;
-
-    [SerializeField]
-    float Movespeed = 10f;
-
     public int WaypointsNumber = 0;
+
+    private float Movespeed = 3f;
 
     void Start()
     {
@@ -36,11 +34,4 @@ public class FollowWP : MonoBehaviour
             WaypointsNumber = 0;
     }
 
-    public void ReverseArray()
-    {
-        //WaypointsNumber--;
-        //System.Array.Reverse(Waypoints);
-
-
-    }
 }

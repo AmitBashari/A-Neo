@@ -9,6 +9,7 @@ public class Player : MovingObject
     public int WallDamage = 1;
     public int PointsPerFood = 10;
     public int PointsPerSoda = 20;
+    public int PointsPerBerry = 50;
     public float RestartLevelDelay = 1f;
     public Text FoodText;
     public AudioClip MoveSound1;
@@ -109,6 +110,14 @@ public class Player : MovingObject
             _food += PointsPerSoda;
             FoodText.text = "+" + PointsPerSoda + "Food: " + _food;
             SoundManager.Instance.RanomizeSfx(DrinkSound1, DrinkSound2);
+            other.gameObject.SetActive(false);
+        }
+
+        else if (other.tag == "Berry")
+        {
+            _food += PointsPerBerry;
+            FoodText.text = "+" + PointsPerBerry + "Food: " + _food;
+            SoundManager.Instance.RanomizeSfx(EatSound1, EatSound2);
             other.gameObject.SetActive(false);
         }
         else if (other.tag == "Ghost")
