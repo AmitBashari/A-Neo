@@ -7,13 +7,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public float LevelStartDelay = 2f;
-    public float TurnDelay = 0.2f;
     public static GameManager instance = null;
     public BoardManager BoardScript;
     public int PlayerFoodPoints = 100;
     //public GameObject Ghost;
     [HideInInspector] public bool PlayersTurn = true;
 
+    private float TurnDelay = 0.4f;
     private Text _levelText;
     private GameObject _levelImage;
     private int _level = 1;
@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
         }
 
         StartCoroutine(MoveEnemies());
+
     }
 
     public void AddEnemyToList(Enemy script)
